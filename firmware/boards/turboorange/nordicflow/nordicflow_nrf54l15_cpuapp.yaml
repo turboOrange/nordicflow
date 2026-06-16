@@ -1,0 +1,10 @@
+identifier: nordicflow/nrf54l15/cpuapp
+name: the actual nordic flow hardware
+vendor: turboorange
+arch: arm
+toolchain:
+  - zephyr
+sysbuild: true
+ram: 188
+flash: 664
+supported: []

@@ -1,0 +1,10 @@
+identifier: nordicflow/nrf54l15/cpuflpr/xip
+name: the actual nordic flow hardware
+vendor: turboorange
+arch: riscv
+toolchain:
+  - zephyr
+sysbuild: true
+ram: 96
+flash: 664
+supported: []

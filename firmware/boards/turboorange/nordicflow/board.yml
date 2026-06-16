@@ -1,0 +1,44 @@
+board:
+  name: nordicflow
+  full_name: nordicflow
+  vendor: turboorange
+  socs:
+  - name: nrf54l15
+    variants:
+    - name: xip
+      cpucluster: cpuflpr
+
+runners:
+  run_once:
+    '--recover':
+      - runners:
+          - nrfjprog
+          - nrfutil
+        run: first
+        groups:
+          - boards:
+              - nordicflow/nrf54l15/cpuapp
+              - nordicflow/nrf54l15/cpuflpr
+              - nordicflow/nrf54l15/cpuflpr/xip
+    '--erase':
+      - runners:
+          - nrfjprog
+          - jlink
+          - nrfutil
+        run: first
+        groups:
+          - boards:
+              - nordicflow/nrf54l15/cpuapp
+              - nordicflow/nrf54l15/cpuflpr
+              - nordicflow/nrf54l15/cpuflpr/xip
+    '--reset':
+      - runners:
+          - nrfjprog
+          - jlink
+          - nrfutil
+        run: last
+        groups:
+          - boards:
+              - nordicflow/nrf54l15/cpuapp
+              - nordicflow/nrf54l15/cpuflpr
+              - nordicflow/nrf54l15/cpuflpr/xip
